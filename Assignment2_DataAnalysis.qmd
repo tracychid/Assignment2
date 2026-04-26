@@ -3,3 +3,61 @@ title: "Assignment2_DataAnalysis"
 format: html
 ---
 
+## Project Summary & Instructions
+
+EPI 203 Assignment 2. This project involves analyzing a synthetic dataset with any prediction model.
+
+### Instructions
+
+Create a short R analysis of the cohort simulated data in a repository on your GitHub account. Fork the repository and then edit to add your analysis in a new branch. The analysis should include at least one table describing the variables, a prediction algorithm (e.g., glm function, caret package, etc.), at least one figure, and a brief summary of your findings in the README.
+
+## Data Cleaning
+
+Data set: synthetic data
+
+The csv file for `cohort` in the `raw-data` folder includes 5,000 observations with variables `smoke`, `female`, `age`, `cardiac`, and `cost`.
+
+```{r}
+library(tidyverse)
+library(here)
+
+# load dataset
+synthetic_df <- read_csv("/Users/tracychidyausiku/Coursework/epi/epi203/Assignment2/raw-data/cohort.csv")
+
+head(synthetic_df)
+
+# check for any missingness
+sum(is.na(synthetic_df))
+
+# visualize distribution of continuous variables
+hist(synthetic_df$age)
+hist(synthetic_df$cost)
+```
+
+## Table 1
+
+Purpose: Create a table with numeric description of variables
+
+Binary Variables: female, cardiac, smoke
+
+Continuous Variables: age, cost
+
+```{r}
+library(table1)
+
+# Make binary variables factors
+synthetic_df$female <- factor(synthetic_df$female, levels=c(0,1), labels=c("Male", "Female"))
+synthetic_df$smoke <- factor(synthetic_df$smoke, levels=c(0,1), labels=c("No Smoke", "Smoke"))
+synthetic_df$cardiac <- factor(synthetic_df$cardiac, levels=c(0,1), labels=c("No Cardiac", "Cardiac"))
+
+# Create table labels
+label(synthetic_df$female) <- "Sex"
+label(synthetic_df$smoke) <- "Smoke"
+label(synthetic_df$cost) <- "Cost"
+label(synthetic_df$age) <- "Age"
+
+# create table 1
+table1(~ cost + age + female + smoke | cardiac, data = synthetic_df)
+```
+
+## 
