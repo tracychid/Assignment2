@@ -1,6 +1,6 @@
 ---
 title: "Assignment2_DataAnalysis"
-format: html
+format: gfm
 ---
 
 ## Project Summary & Instructions
