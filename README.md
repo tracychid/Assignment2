@@ -1,7 +1,10 @@
 # Assignment #2 Repository
 
-This repository includes the simulated data for Assignment #2. Fork this repository and add your analysis as described in the canvas assignment.
-The csv file for `cohort` in the `raw-data` folder includes 5,000 observations with variables `smoke`, `female`, `age`, `cardiac`, and `cost`.
+This repository includes the simulated data for Assignment #2. 
+The analysis should include at least one table describing the variables, a prediction algorithm (e.g., glm() function, 
+caret package, etc), at least one figure, and a brief summary of your findings.
+The csv file for `cohort` in the `raw-data` folder includes 5,000 observations with 
+variables `smoke`, `female`, `age`, `cardiac`, and `cost`.
 
 
 
