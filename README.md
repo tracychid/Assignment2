@@ -15,3 +15,6 @@ in cost. Adjusted odds ratios showed smoking as protective (OR = 0.05, CI = 0.03
 to the imbalance in smoking and rates of cardiac events in females compared to males who make up 88% of
 cardiac events in our study.
 
+
+AI Statement: generative AI technology (e.g., ChatGPT) was not used to complete any portion of the work.
+
