@@ -22,7 +22,7 @@ library(tidyverse)
 library(here)
 
 # load dataset
-synthetic_df <- read_csv("/Users/tracychidyausiku/Coursework/epi/epi203/Assignment2/raw-data/cohort.csv")
+synthetic_df <- read_csv(here("raw-data", "cohort.csv"))
 
 head(synthetic_df)
 
@@ -61,6 +61,7 @@ label(synthetic_df$age) <- "Age"
 tableOne <- table1(~ cost + age + female + smoke | cardiac, data = synthetic_df)
 
 # Save as PNG
+## looks like you've got two Assignment2_DataAnalysis_files! I'm assuming the one within data-analysis is the right one?
 save_kable(tableOne, file = "table1.png")
 ```
 
@@ -94,6 +95,7 @@ logistc_reg_OR_CI <- as.data.frame(results)
 ## Figures
 
 ```{r}
+## consider adding all library imports at the beginning of the script rather within each code chunk
 library(ggplot2)
 
 table(synthetic_df$female, synthetic_df$smoke)
