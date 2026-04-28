@@ -1,6 +1,7 @@
 # Assignment #2 Repository
 
-This repository includes the simulated data for Assignment #2. 
+This repository includes the simulated data for Assignment #2.
+
 The analysis should include at least one table describing the variables, a prediction algorithm (e.g., glm() function, 
 caret package, etc), at least one figure, and a brief summary of your findings.
 The csv file for `cohort` in the `raw-data` folder includes 5,000 observations with 
