@@ -5,7 +5,8 @@ format: gfm
 
 ## Project Summary & Instructions
 
-EPI 203 Assignment 2. This project involves analyzing a synthetic dataset with any prediction model.
+EPI 203, Spring 2026 Assignment 2. This project involves analyzing a synthetic dataset with any prediction model.
+
 
 ### Instructions
 
