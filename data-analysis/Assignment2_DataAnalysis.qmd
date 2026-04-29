@@ -21,6 +21,8 @@ The csv file for `cohort` in the `raw-data` folder includes 5,000 observations w
 ```{r}
 library(tidyverse)
 library(here)
+library(ggplot2)
+library(finalfit)
 
 # load dataset
 synthetic_df <- read_csv(here("raw-data", "cohort.csv"))
@@ -62,7 +64,6 @@ label(synthetic_df$age) <- "Age"
 tableOne <- table1(~ cost + age + female + smoke | cardiac, data = synthetic_df)
 
 # Save as PNG
-## looks like you've got two Assignment2_DataAnalysis_files! I'm assuming the one within data-analysis is the right one?
 save_kable(tableOne, file = "table1.png")
 ```
 
@@ -96,9 +97,6 @@ logistc_reg_OR_CI <- as.data.frame(results)
 ## Figures
 
 ```{r}
-## consider adding all library imports at the beginning of the script rather within each code chunk
-library(ggplot2)
-
 table(synthetic_df$female, synthetic_df$smoke)
 
 # smoker by female/male
@@ -121,7 +119,6 @@ ggplot(synthetic_df, aes(x=age, fill=smoke)) +
 ### Forest Plot
 
 ```{r}
-library(finalfit)
 
 explanatory = c("age", "female", "smoke", "cost")
 dependent = 'cardiac'
